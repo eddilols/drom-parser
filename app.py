@@ -46,7 +46,7 @@ def tableParsing(src):
 
             catList[catTitle][title]=param
 
-    return jsonify(catList)
+    return catList
 
 
 
@@ -66,7 +66,7 @@ def getlist():
     data = getHtml(url)
     json = tableParsing(data)
 
-    return url
+    return jsonify(json)
 
 
 

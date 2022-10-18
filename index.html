@@ -7,7 +7,7 @@
 
   <body>
     <div id="app"></div>
-    <form action="http://127.0.0.1:5000/car">
+    <form action="https://drom-parser.herokuapp.com/car">
     <input id="inp" type="text" name="url" />
     <button type="submit" id="btn">GO</button>
     </form>
@@ -24,7 +24,7 @@ document.getElementById("app").innerHTML = `
 
 async function send() {
   let url = document.querySelector("#inp").value;
-  let encode = encodeURI("http://127.0.0.1:5000/car?url="+url);
+  let encode = encodeURI("https://drom-parser.herokuapp.com/car?url="+url);
 
   let req = await fetch(encode);
   let res = req.text;
