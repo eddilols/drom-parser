@@ -1,5 +1,5 @@
 # This is a sample Python script.
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS
 from flask_restful import Api, Resource
 import time
@@ -58,6 +58,9 @@ def getHtml(url):
     r = requests.get(url=url, headers=headers)
 
     return r.text
+@app.route("/")
+def index():
+    return render_template("index.html")
 
 @app.route("/car", methods=["GET"])
 def getlist():
