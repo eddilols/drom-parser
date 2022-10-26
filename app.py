@@ -71,8 +71,6 @@ def getlist():
     json_string = json.dumps(jsons, ensure_ascii=False, indent=4)
     response = Response(json_string, content_type="application/json; charset=utf-8")
     return response
-    return jsonutf
-
 
 
 # Press the green button in the gutter to run the script.
