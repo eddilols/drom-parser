@@ -1,5 +1,5 @@
 # This is a sample Python script.
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, jsonify, request, render_template,Response
 from flask_cors import CORS
 from flask_restful import Api, Resource
 import time
@@ -67,9 +67,11 @@ def getlist():
     url = request.args.get("url")
     print(url)
     data = getHtml(url)
-    json = tableParsing(data)
-
-    return jsonify(json)
+    jsons = tableParsing(data)
+    json_string = json.dumps(jsons, ensure_ascii=False, indent=4)
+    response = Response(json_string, content_type="application/json; charset=utf-8")
+    return response
+    return jsonutf
 
 
 
